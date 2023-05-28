@@ -19,7 +19,7 @@ public class day17_Annotations {
     @BeforeMethod: Runs before each @Test methods
     @AfterMethod: Runs after each @Test methods
 
-    Hierarchy--> @BeforeSuite, @BeforeTest, @BeforeClass, @BeforeGroups, @BeforeMethod
+    Hierarchy--> @BeforeSuite, @BeforeTest, @BeforeClass, @BeforeGroups, @BeforeMeth od
 
     @Test(priority = 1) --> Test NG runs test methods in alphabetical order. We will use priority keyword to prioritize the test cases.
     By default all test cases' priority is 0. Test NG runs less priority number first.
