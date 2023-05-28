@@ -5,7 +5,7 @@ import myapp.utilities.Driver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class day_18FirstConfigTest {
+public class day18_FirstConfigTest {
 
     @Test
     public void firstConfigTest(){
