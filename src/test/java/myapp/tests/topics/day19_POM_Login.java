@@ -1,4 +1,4 @@
-package myapp.tests;
+package myapp.tests.topics;
 
 import myapp.pages.OrangeHRMDashboardPage;
 import myapp.pages.OrangeHRMLoginPage;
