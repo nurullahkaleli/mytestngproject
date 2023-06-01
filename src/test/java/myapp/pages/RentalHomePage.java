@@ -10,14 +10,20 @@ public class RentalHomePage {
     public RentalHomePage(){
 
         PageFactory.initElements(Driver.getDriver(),this);
-
     }
 
     @FindBy(partialLinkText = "Login")
     public WebElement loginLink;
 
-    @FindBy(partialLinkText = "dropdown-basic-button")
+    @FindBy(id = "dropdown-basic-button")
     public WebElement userID;
+
+    @FindBy(linkText = "Logout")
+    public WebElement logOut;
+
+    @FindBy(xpath = "//button[.='OK']")
+    public WebElement OK;
+
 
 
 }
