@@ -24,4 +24,18 @@ public class DataProviderUtils {
 
         return cities;
     }
+//      DATA FOR LOGIN TEST
+    @DataProvider
+    public Object[][] customerDataProvider(){
+
+        Object[][] customerInfo = {
+                {"sam.walker@bluerentalcars.com", "c!fas_art"},
+                {"kate.brown@bluerentalcars.com", "tad1$Fas"},
+                {"raj.khan@bluerentalcars.com", "v7Hg_va ^"},
+                {"pam.raymond@bluerentalcars.com", "Nga ^ g6!"}
+        };
+        return customerInfo;
+    }
+
+
 }

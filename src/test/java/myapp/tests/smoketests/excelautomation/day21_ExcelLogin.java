@@ -43,11 +43,11 @@ public class day21_ExcelLogin {
 
 //        Enter email
             WaitUtils.waitFor(1);
-            rentalLoginPage.userEmail.sendKeys(w.get("username"));
+            rentalLoginPage.userEmail.sendKeys(w.get("username")); //Get data from data excel
 
 //        Enter password
             WaitUtils.waitFor(1);
-            rentalLoginPage.userPassword.sendKeys(w.get("password"));
+            rentalLoginPage.userPassword.sendKeys(w.get("password")); //Get data from data excel
 
 //        Click on login
             WaitUtils.waitFor(1);
