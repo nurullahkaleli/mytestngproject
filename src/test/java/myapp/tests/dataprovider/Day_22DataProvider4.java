@@ -3,19 +3,21 @@ package myapp.tests.dataprovider;
 import myapp.pages.RentalHomePage;
 import myapp.pages.RentalLoginPage;
 import myapp.utilities.*;
-
 import org.testng.annotations.Test;
 
-public class Day22_DataProvider3 {
+public class Day_22DataProvider4 {
 
-//      GETTING THE DATA FROM
-//      TEST LOGIN FUNCTIONALITY USING CUSTOMER SERVICE CREDENTIALS
 //      We need 2 methods:  *** @DataProvider  ***@Test method
+//      DataProvider3 gets data from customerDataProvider from utils
+//      DataProvider4 gets data from  excelCustomerDataProvider from utils FROM EXCEL
+//      The only differance dataProvider = "excelCustomerDataProvider"
 
     RentalHomePage rentalHomePage;
     RentalLoginPage rentalLoginPage;
-    @Test(dataProvider = "customerDataProvider",dataProviderClass = DataProviderUtils.class)
-    public void customerLoginTest(String username,String password){
+
+    @Test(dataProvider = "excelCustomerDataProvider",dataProviderClass = DataProviderUtils.class)
+    public void CustomerLoginTest(String username, String password){
+
         System.out.println(username + password);
         Driver.getDriver().get(ConfigReader.getProperty("rental_home_url"));
         rentalHomePage = new RentalHomePage();
@@ -49,6 +51,6 @@ public class Day22_DataProvider3 {
         WaitUtils.waitFor(1);
 
         Driver.closeDriver();
-    }
 
+    }
 }

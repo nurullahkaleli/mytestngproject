@@ -21,6 +21,13 @@ How do you use Data Provider?
  There are 2 parameter in Data Provider.
 "name" : used for assigning custom method name
 "parallel" :used for parallel testing
+BENEFITS:
+***Data Driven Testing WITH or WITHOUT EXTERNAL FILES(excel, json, cvs...). Day22_DataProvider3
+***Eliminate loops because data provider automatically loops through the list
+***Data providers let us create reusable data sources. For example, we created DataProviderUtils to hold our smoke test data
+***We are able to parameterize the test methods and hold the data and use them dynamically in the test methods
+***Data is dynamic that means we can change the data from the data source WITHOUT CHANGING THE DATA FROM THE ACTUAL TEST CLASS
+***Updating or maintaining the test data is easy
  */
 
     @Test(dataProvider = "customerCredentials", dataProviderClass = DataProviderUtils.class)

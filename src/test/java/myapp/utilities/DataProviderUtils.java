@@ -37,5 +37,17 @@ public class DataProviderUtils {
         return customerInfo;
     }
 
+//      THIS DATA SOURCE WILL GET THE DATA FROM THE EXCEL SHEET
+    @DataProvider
+    public Object[][] excelCustomerDataProvider(){
+        String path = "./src/test/java/resources/mysmoketestdata.xlsx";
+        String sheetName = "customer_info";
+        ExcelUtils excelUtils = new ExcelUtils(path,sheetName);
+        Object [][] customerInfo = excelUtils.getDataArrayWithoutFirstRow();
+        return customerInfo;
+
+    }
+
+
 
 }
