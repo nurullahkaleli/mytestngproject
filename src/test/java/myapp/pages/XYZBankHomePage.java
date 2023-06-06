@@ -18,6 +18,12 @@ public class XYZBankHomePage {
     public WebElement bankManagerLoginButton;
 
     @FindBy(xpath = "//button[.='Customer Login']")
-    public WebElement CustomerLoginButton;
+    public WebElement customerLoginButton;
+
+    @FindBy(xpath = "//button[.='Home']")
+    public WebElement homeButton;
+
+    @FindBy(xpath = "//button[.='Logout']")
+    public WebElement logoutButton;
 
 }

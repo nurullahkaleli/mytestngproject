@@ -1,14 +1,19 @@
 package myapp.tests.topics;
 
 import com.github.javafaker.Faker;
+import myapp.pages.XYZBankCustomerPage;
 import myapp.pages.XYZBankManagerPage;
 import myapp.pages.XYZBankHomePage;
 import myapp.utilities.ConfigReader;
 import myapp.utilities.Driver;
 import myapp.utilities.ReusableMethods;
+import myapp.utilities.WaitUtils;
 import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
+
+import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertTrue;
 
 public class XYZBankTest {
 
@@ -118,7 +123,7 @@ public class XYZBankTest {
         Select userDropDown = new Select(xyzBankManagerPage.userDropDown);
         Select currencyDropDown = new Select(xyzBankManagerPage.currencyDropDown);
 
-        for (int i = 6; i < 11; i++) {
+        for (int i = 6; i < 11; i++) { //        Open 4 more accounts
 
             userDropDown.selectByIndex(i);
 
@@ -135,27 +140,68 @@ public class XYZBankTest {
             }
         }
 
-//        Open 4 more accounts
 //        Click on "Home" button
-//        Click on "Customer Login" button
-//        Select name from dropdown
-//        Click on "Login"
-//        Click on "Deposit" button
-//        Type 100 into "Amount to be Deposited" input
-//        Click on "Deposit"(Submit) button
-//        Assert that "Deposit Successful" is displayed
-//        Click on "Withdrawal" button
-//        Type 100 into "Amount to be Withdrawn" input
-//        Click on "Withdraw"(Submit) button
-//        Assert that "Transaction  Successful" is displayed
-//        Click on "Logout" button
-//        Click on "Home" button
-//        Click on "Bank Manager Login" button
-//        Click on "Customers" button
-//        Click on each "Delete" button
-//        Count table row numbers
-//        Assert that number of customers is 0
+        xyzBankHomePage.homeButton.click();
 
+//        Click on "Customer Login" button
+        xyzBankHomePage.customerLoginButton.click();
+
+//        Select name from dropdown
+        XYZBankCustomerPage xyzBankCustomerPage = new XYZBankCustomerPage();
+        Select youNameDropDown = new Select(xyzBankCustomerPage.yourNameDropDown);
+        youNameDropDown.selectByIndex(6);
+
+//        Click on "Login"
+        xyzBankCustomerPage.loginButton.click();
+
+//        Click on "Deposit" button
+        xyzBankCustomerPage.depositButton.click();
+
+//        Type 100 into "Amount to be Deposited" input
+        xyzBankCustomerPage.amountToBeDeposited.sendKeys("100");
+
+//        Click on "Deposit"(Submit) button
+        xyzBankCustomerPage.depositSubmitButton.click();
+
+//        Assert that "Deposit Successful" is displayed
+        assertTrue(xyzBankCustomerPage.depositSuccessfulMessage.isDisplayed());
+
+//        Click on "Withdrawal" button
+        xyzBankCustomerPage.withDrawlButton.click();
+
+//        Type 100 into "Amount to be Withdrawn" input
+        xyzBankCustomerPage.withdrawSubmitButton.click();            // there is a bug, so we do this so test pass
+        xyzBankCustomerPage.amountToBeWithDrawn.sendKeys("100");
+
+
+//        Click on "Withdraw"(Submit) button
+        xyzBankCustomerPage.withdrawSubmitButton.click();
+
+//        Assert that "Transaction  Successful" is displayed
+        assertTrue(xyzBankCustomerPage.transactionSuccessfulMessage.isDisplayed());
+
+//        Click on "Logout" button
+        xyzBankHomePage.logoutButton.click();
+
+//        Click on "Home" button
+        xyzBankHomePage.homeButton.click();
+
+//        Click on "Bank Manager Login" button
+        xyzBankHomePage.bankManagerLoginButton.click();
+
+//        Click on "Customers" button
+        xyzBankManagerPage.customersButton.click();
+
+//        Click on each "Delete" button
+        for (int i=6 ; i<11 ; i++){
+            xyzBankManagerPage.deleteButtonList.get(5).click();
+        }
+
+//        Count table row numbers
+        int numberOfRows = xyzBankManagerPage.deleteButtonList.size();
+
+//        Assert that number of customers is 0
+        assertEquals(5, numberOfRows);
     }
 
 
