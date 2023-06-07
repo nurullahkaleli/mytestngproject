@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class Day18_Assertions {
-    @Test
+    @Test (groups = "regression1")
     public void hardAssertions(){
         /*
             Hard assertion will stop if the assertion fails
@@ -16,7 +16,7 @@ public class Day18_Assertions {
         Assert.assertEquals(3,5);//FAILS SO STOP AND GET OUT OF THE TEST METHOD
         System.out.println("Line 17 codes");//WILL NOT EXECUTE
     }
-    @Test
+    @Test(groups = "regression1")
     public void softAsseertions() {
         /*
             Test case will not continue to execute EVEN IF A TEST ASSERTION FAILS

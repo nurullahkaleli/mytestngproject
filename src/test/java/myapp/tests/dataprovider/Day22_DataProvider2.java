@@ -70,7 +70,7 @@ It is easy to update the data set and rerun the tests without modifying the test
         Driver.closeDriver();
 }
 
-    @Test(dataProvider = "smokeTestProvider")
+    @Test(dataProvider = "smokeTestProvider" , groups = "regression1")
     public void adminLoginTest(String userName,String pass, String title, String city,String age){
 //      Data provider has 5 parameter therefore I must use 5 parameter in the test method
 //       However I don't have to use all of them inside the method body

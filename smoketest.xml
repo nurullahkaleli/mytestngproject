@@ -3,7 +3,7 @@
 <suite name="Smoke Test Suite" verbose="1">
     <test name="smoke test">
         <packages>
-            <package name="myapp.tests.smoketests.logintests"></package>
+            <package name="myapp/tests/dataprovider"></package>
         </packages>
     </test>
 </suite>
