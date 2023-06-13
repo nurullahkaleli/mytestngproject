@@ -2,19 +2,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
 
-    <!-- Add listeners tag before test in the xml file to connect Listeners and this xml file -->
+    <!--    LINKING LISTENER CAPABILITY FOR THIS CLASS-->
     <listeners>
         <listener class-name="myapp.utilities.ListenersUtil"></listener>
     </listeners>
+    <!--    TEST CASES-->
 
     <test verbose="2" preserve-order="true"
-          name="C:/Users/echel/IdeaProjects/mytestngproject/src/test/java/myapp/tests/listeners/ListenersTest2.java">
+          name="C:/Users/echel/IdeaProjects/mytestngproject/src/test/java/myapp/tests/listeners/ListenersTest4.java">
         <classes>
-            <class name="myapp.tests.listeners.ListenersTest2">
+            <class name="myapp.tests.listeners.ListenersTest4">
                 <methods>
-                    <include name="test1"/>
-                    <include name="test2"/>
-                    <include name="test3"/>
                     <include name="test4"/>
                 </methods>
             </class>
